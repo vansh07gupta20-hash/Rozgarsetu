@@ -1,7 +1,9 @@
 package com.rozgarsetu.controller;
 
+import com.rozgarsetu.dto.AdminLoginRequest;
 import com.rozgarsetu.entity.Admin;
 import com.rozgarsetu.service.AdminService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,5 +33,16 @@ public class AdminController {
     // Safe response DTO (does not expose password)
     public record AdminResponse(Integer adminId, String name, String email){
 
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AdminResponse> loginAdmin(@Valid @RequestBody AdminLoginRequest request) {
+        Optional<Admin> adminOptional = adminService.authenticateAdmin(request.getEmail(), request.getPassword());
+        if (adminOptional.isEmpty()) {
+            return ResponseEntity.status(401).build();
+        }
+        Admin admin = adminOptional.get();
+        AdminResponse response = new AdminResponse(admin.getAdminId(), admin.getName(), admin.getEmail());
+        return ResponseEntity.ok(response);
     }
 }

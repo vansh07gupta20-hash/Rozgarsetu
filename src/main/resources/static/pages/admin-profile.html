@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile | RozgarSetu</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="../js/profile.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+    <a class="brand" href="../index.html">RozgarSetu <span>Admin</span></a>
+    <button type="button" id="logoutButton" class="logout-button">
+        Log out
+    </button>
+</header>
+
+<main class="page">
+    <section class="profile-card">
+        <p class="eyebrow">ADMIN ACCOUNT</p>
+        <h1>Admin profile</h1>
+        <p class="subtitle">Your account details.</p>
+
+        <p id="message" class="message" role="status" aria-live="polite">
+            Loading profile...
+        </p>
+
+        <div id="profileDetails" class="profile-details" hidden>
+            <div class="detail-row">
+                <span>Admin ID</span>
+                <strong id="adminId"></strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Name</span>
+                <strong id="adminName"></strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Email</span>
+                <strong id="adminEmail"></strong>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
