@@ -5,44 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login | RozgarSetu</title>
     <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/login.js" defer></script>
 </head>
 <body>
-<main class="page">
-    <section class="login-card">
-        <div class="brand-mark" aria-hidden="true">RS</div>
-        <p class="eyebrow">ROZGARSETU</p>
-        <h1>Admin login</h1>
-        <p class="subtitle">Sign in to manage your platform.</p>
+<header class="site-header">
+    <a class="brand" href="../index.html" aria-label="RozgarSetu home">
+        <span class="brand-mark">R</span>
+        <span>Rozgar<span class="brand-highlight">Setu</span></span>
+    </a>
 
-        <form id="loginForm">
-            <label for="email">Email address</label>
-            <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="admin@example.com"
-                    autocomplete="username"
-                    required
-            >
+    <a class="back-link" href="../index.html">
+        <span aria-hidden="true">←</span>
+        Back to website
+    </a>
+</header>
 
-            <label for="password">Password</label>
-            <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    autocomplete="current-password"
-                    required
-            >
+<main class="login-layout">
+    <section class="welcome-panel" aria-labelledby="welcome-title">
+        <div class="welcome-content">
+            <p class="eyebrow">THE ROZGARSETU NETWORK</p>
 
-            <p id="message" class="message" role="alert" aria-live="polite"></p>
+            <h1 id="welcome-title">
+                Connecting local talent<br>
+                with <span>local opportunity.</span>
+            </h1>
 
-            <button type="submit" id="loginButton">Sign in</button>
-        </form>
+            <p class="welcome-description">
+                Manage the people and services that help communities
+                find trusted local workers.
+            </p>
 
-        <a class="back-link" href="../index.html">Back to home</a>
+            <div class="welcome-highlights">
+                <div class="highlight">
+                    <span class="highlight-icon" aria-hidden="true">✓</span>
+                    <span>Review worker applications</span>
+                </div>
+                <div class="highlight">
+                    <span class="highlight-icon" aria-hidden="true">✓</span>
+                    <span>Manage services and categories</span>
+                </div>
+                <div class="highlight">
+                    <span class="highlight-icon" aria-hidden="true">✓</span>
+                    <span>Respond to customer reports</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-footer">
+            <span class="footer-line"></span>
+            <p>Local skills. Real opportunities. Stronger communities.</p>
+        </div>
+    </section>
+
+    <section class="login-panel" aria-labelledby="login-title">
+        <div class="login-card">
+            <div class="login-card-heading">
+                <div class="admin-icon" aria-hidden="true">
+                    <span>RS</span>
+                </div>
+
+                <p class="eyebrow">ADMINISTRATOR ACCESS</p>
+                <h2 id="login-title">Welcome back</h2>
+                <p class="login-subtitle">
+                    Sign in to continue to your admin workspace.
+                </p>
+            </div>
+
+            <form id="adminLoginForm" class="login-form">
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="admin@rozgarsetu.com"
+                            autocomplete="username"
+                            required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                    >
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-option" for="rememberMe">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <span class="secure-note">
+                            <span aria-hidden="true">●</span> Secure admin access
+                        </span>
+                </div>
+
+                <button type="submit" class="login-button">
+                    <span>Sign in to dashboard</span>
+                    <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+
+                <p id="loginMessage" class="login-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="login-card-footer">
+                <span class="footer-lock" aria-hidden="true">▣</span>
+                This area is reserved for authorized administrators.
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 RozgarSetu. All rights reserved.
+        </p>
     </section>
 </main>
+
+<script src="../js/login.js"></script>
 </body>
 </html>
