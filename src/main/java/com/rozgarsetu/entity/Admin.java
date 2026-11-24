@@ -26,7 +26,7 @@ public class Admin {
     private String email;
 
     @NotBlank
-    @Size(min = 8, max = 50, message = "Password must contain at least 8 characters")
+    @Size(min = 8, max = 50, message = "Password must contains at least 8 characters")
     @Column(name = "password")
     private String password;
 
