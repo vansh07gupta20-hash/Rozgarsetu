@@ -1,13 +1,14 @@
-const loginForm = document.getElementById("loginForm");
-const loginButton = document.getElementById("loginButton");
-const message = document.getElementById("message");
+const loginForm = document.getElementById("adminLoginForm");
+const loginButton = loginForm.querySelector(".login-button");
+const buttonText = loginButton.querySelector("span");
+const message = document.getElementById("loginMessage");
 
 loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     message.textContent = "";
     loginButton.disabled = true;
-    loginButton.textContent = "Signing in...";
+    buttonText.textContent = "Signing in...";
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
@@ -49,6 +50,6 @@ loginForm.addEventListener("submit", async (event) => {
             "Cannot connect to the server. Check that Spring Boot is running.";
     } finally {
         loginButton.disabled = false;
-        loginButton.textContent = "Sign in";
+        buttonText.textContent = "Sign in to dashboard";
     }
 });
